@@ -5,7 +5,9 @@ const meta = {
 	title: 'Viribus Unitis/Button',
 	component: VuButton,
 	tags: ['autodocs'],
-	args: {},
+	args: {
+		text: 'Привет',
+	},
 } satisfies Meta<typeof VuButton>;
 
 export default meta;
