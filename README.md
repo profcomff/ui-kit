@@ -38,7 +38,7 @@ pnpm dev
 
 Для локального запуска Storybook необходимо выполнить команду 
 ```
-pnpm storybook
+pnpm sb
 ```
 
 
