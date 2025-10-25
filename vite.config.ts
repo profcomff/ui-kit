@@ -7,6 +7,7 @@ import vue from '@vitejs/plugin-vue';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import { fileURLToPath } from 'url';
 import path from 'node:path';
+import tailwindcss from '@tailwindcss/vite'
 import { storybookTest } from '@storybook/addon-vitest/vitest-plugin';
 const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
@@ -18,6 +19,7 @@ export default defineConfig({
 				transformAssetUrls,
 			},
 		}),
+		tailwindcss(),
 		vuetify({
 			autoImport: true,
 			styles: {
