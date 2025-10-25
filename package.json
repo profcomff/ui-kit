@@ -52,6 +52,7 @@
     "knip": "^5.45.0",
     "openapi-typescript": "^7.6.1",
     "playwright": "^1.56.1",
+    "postcss-html": "^1.8.0",
     "postcss-preset-env": "^10.1.5",
     "prettier": "^3.5.2",
     "sass": "^1.93.2",
