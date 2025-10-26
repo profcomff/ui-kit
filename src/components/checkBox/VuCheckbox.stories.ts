@@ -14,17 +14,20 @@ export const Default: Story = {
 	args: {
 		disabled: false,
 		modelValue: false,
+        label: "Оценок нет"
 	},
 };
 export const Active: Story = {
 	args: {
 		disabled: false,
 		modelValue: true,
+        label: "Оценок нет"
 	},
 };
 export const Disabled: Story = {
 	args: {
 		disabled: true,
 		modelValue: false,
+        label: "Оценок нет"
 	},
 };

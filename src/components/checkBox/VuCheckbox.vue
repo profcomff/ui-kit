@@ -4,6 +4,7 @@ import { computed } from 'vue';
     interface Props {
         disabled: boolean;
         modelValue: boolean;
+        label: string;
     }
     const props = defineProps<Props>();
     const emit = defineEmits(['update:modelValue'])
@@ -16,7 +17,7 @@ import { computed } from 'vue';
 
 <template>
 	<v-checkbox 
-        label="Оценок нет" 
+        label="label" 
         v-model="value"
         :disabled="disabled"> 
     </v-checkbox>
