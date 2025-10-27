@@ -1,6 +1,11 @@
-# Пример приложения
+# Viribus Unitis UI kit
 
-В этом репозитории представлен пример простейшего фронтенд-сервиса с Vue.js.
+Здесь мы разрабатываем компоненты, общие для интерфейсов
+<a href="https://app.profcomff.com" target="_blank">Твой ФФ</a> и всех
+<a href="https://app.profcomff.com/apps" target="_blank">миниприложений</a>. База компонентов и стилей
+берется из <a href="https://vuetifyjs.com/en/components/all/" target="_blank">Vuetify</a>, а дизайн-система
+описана в нашей
+[Фигме](https://www.figma.com/design/gfvuDN9x7I7sFCJQ7b1bIz/%D0%A2%D0%B2%D0%BE%D0%B9-%D0%A4%D0%A4--%7C-Viribus?node-id=5399-18531&t=gqJoSlE0UHgEkayo-0).
 
 _Большая часть команд и инструкций написаны для операционных систем Linux и MacOS._
 
