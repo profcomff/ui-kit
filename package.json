@@ -7,14 +7,15 @@
     "build": "vue-tsc && vite build",
     "docker-build": "vue-tsc && vite build --base=/ui",
     "preview": "vite preview",
-    "lint": "eslint src/ && pnpm lint:deadcode && pnpm lint:circular",
+    "lint": "eslint src/",
     "lint:deadcode": "knip --exclude binaries,dependencies,unlisted",
     "lint:circular": "dpdm --exit-code circular:1 --no-tree --no-warning --progress false --transform ./src/main.ts",
     "format": "prettier src/ --write",
     "stylelint": "stylelint 'src/**/*.{vue,css}' --fix",
     "check": "vue-tsc && pnpm format && pnpm lint && pnpm stylelint",
+    "check:hard": "vue-tsc && pnpm lint && pnpm lint:deadcode && pnpm lint:circular && pnpm format && pnpm stylelint",
     "test": "echo ok",
-    "storybook": "storybook dev -p 6006",
+    "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "dependencies": {
