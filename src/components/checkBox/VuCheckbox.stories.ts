@@ -27,7 +27,7 @@ export const Active: Story = {
 export const Disabled: Story = {
 	args: {
 		disabled: true,
-		modelValue: false,
+		modelValue: true,
         label: "Оценок нет"
 	},
 };

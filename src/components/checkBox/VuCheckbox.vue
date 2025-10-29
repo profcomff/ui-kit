@@ -17,7 +17,7 @@ import { computed } from 'vue';
 
 <template>
 	<v-checkbox 
-        label="label" 
+        :label="label" 
         v-model="value"
         :disabled="disabled"> 
     </v-checkbox>
