@@ -17,6 +17,7 @@ import { computed } from 'vue';
 
 <template>
 	<v-checkbox 
+        density="compact"
         :label="label" 
         v-model="value"
         :disabled="disabled"> 
