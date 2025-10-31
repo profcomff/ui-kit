@@ -1,72 +1,71 @@
-<template>
-	<v-text-field
-		v-model="model"
-		class="vu-search text-body-1"
-		variant="outlined"
-		placeholder="Поиск преподавателя"
-		density="compact"
-		hide-details
-		prepend-inner-icon="mdi-magnify"
-		color="base-black"
-		bg-color="base-white"
-	>
-		<template #append-inner>
-			<v-btn class="vu-search__filter-btn" icon variant="text" size="small" @click="$emit('click:filter')">
-				<v-icon icon="mdi-tune" />
-			</v-btn>
-		</template>
-	</v-text-field>
-</template>
-
 <script setup lang="ts">
-const model = defineModel<string>();
+import { ref, computed } from 'vue';
 
-defineEmits<{
-	(e: 'click:filter'): void;
+const props = defineProps<{
+	modelValue: string;
 }>();
+
+const emit = defineEmits<{
+	(e: 'update:modelValue', value: string): void;
+	(e: 'click-filter'): void;
+}>();
+
+const innerValue = computed({
+	get: () => props.modelValue,
+	set: (val: string) => emit('update:modelValue', val),
+});
+
+const isHovered = ref(false);
+const isActive = ref(false);
 </script>
 
-<style lang="scss" scoped>
+<template>
+	<div class="vu-search" :class="{ hovered: isHovered, active: isActive }">
+		<v-icon class="search-icon" icon="mdi-magnify" />
+		<v-text-field
+			v-model="innerValue"
+			placeholder="Поиск"
+			density="compact"
+			variant="outlined"
+			hide-details
+			@mouseenter="isHovered = true"
+			@mouseleave="isHovered = false"
+			@mousedown="isActive = true"
+			@mouseup="isActive = false"
+			class="search-input"
+		/>
+		<v-icon class="filter-icon" icon="mdi-filter-variant" @click="emit('click-filter')" />
+	</div>
+</template>
+
+<style scoped>
 .vu-search {
-	:deep(.v-field) {
-		border-radius: 8px;
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--v-theme-gray-4-text-border);
+	border-radius: 8px;
+	padding: 4px 8px;
+	gap: 4px;
+	transition:
+		border-color 0.2s,
+		border-width 0.2s;
+
+	&.hovered {
+		border-color: var(--v-theme-base-black);
+		border-width: 1px;
 	}
 
-	:deep(.v-icon) {
-		font-size: 24px;
-		height: 24px;
-		width: 24px;
+	&.active {
+		border-color: var(--v-theme-base-black);
+		border-width: 2px;
 	}
+}
 
-	:deep(.v-input__prepend-inner .v-icon),
-	:deep(.vu-search__filter-btn .v-icon) {
-		color: var(--v-theme-gray-3-bg) !important;
-	}
+.search-input {
+	flex-grow: 1;
+}
 
-	:deep(input::placeholder) {
-		color: var(--v-theme-gray-3-bg) !important;
-		opacity: 1;
-	}
-
-	:deep(.v-field__outline) {
-		--v-field-border-color: var(--v-theme-gray-3-bg);
-		--v-field-border-opacity: 1;
-		--v-field-border-width: 1px;
-	}
-
-	&:hover :deep(.v-field__outline) {
-		--v-field-border-color: var(--v-theme-base-black);
-	}
-
-	&.v-input--is-focused {
-		:deep(.v-field__outline) {
-			--v-field-border-color: var(--v-theme-base-black);
-			--v-field-border-width: 2px; /* Рамка в 2 раза толще */
-		}
-
-		:deep(.v-icon) {
-			color: var(--v-theme-base-black) !important;
-		}
-	}
+.filter-icon {
+	cursor: pointer;
 }
 </style>
