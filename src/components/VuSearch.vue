@@ -1,61 +1,40 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+const modelValue = defineModel<string>();
 
-const props = defineProps<{
-	modelValue: string;
+defineEmits<{
+	(e: 'click'): [];
 }>();
-
-const emit = defineEmits<{
-	(e: 'update:modelValue', value: string): void;
-	(e: 'click-filter'): void;
-}>();
-
-const innerValue = computed({
-	get: () => props.modelValue,
-	set: (val: string) => emit('update:modelValue', val),
-});
-
-const isHovered = ref(false);
-const isActive = ref(false);
 </script>
 
 <template>
 	<v-text-field
-		v-model="innerValue"
+		v-model="modelValue"
+		class="vu-search text-body-1"
 		placeholder="Поиск преподавателя"
 		hide-details
 		density="compact"
 		variant="outlined"
-		class="vu-search text-body-1"
 		prepend-inner-icon="mdi-magnify"
 		append-inner-icon="mdi-filter-variant"
-		color="gray-4-text-border"
-		@click:append-inner="emit('click-filter')"
-		@mouseenter="isHovered = true"
-		@mouseleave="isHovered = false"
-		@mousedown="isActive = true"
-		@mouseup="isActive = false"
+		@click:append-inner="$emit('click')"
 	/>
 </template>
 
 <style scoped>
 .vu-search {
 	width: 375px;
-	height: 41px;
-	border-radius: 8px;
-	border: 1px solid var(--v-theme-gray-4-text-border); /* default #949494 */
-	transition:
-		border-color 0.2s,
-		border-width 0.2s;
-
-	&:hover {
-		border-color: var(--v-theme-base-black);
-		border-width: 1px;
-	}
-
-	&:active {
-		border-color: var(--v-theme-base-black);
-		border-width: 2px;
-	}
 }
+/* stylelint-disable selector-class-pattern */
+
+/* Стилизация иконок */
+.vu-search ::v-deep(.v-input__icon--prepend-inner .v-icon),
+.vu-search ::v-deep(.v-input__icon--append-inner .v-icon) {
+	color: var(--v-theme-gray-4-text-border);
+}
+
+/* Стилизация черной рамки в состоянии 'active' (focus) */
+.vu-search.v-field--focused ::v-deep(.v-field__outline) {
+	color: var(--v-theme-base-black);
+}
+/* stylelint-enable selector-class-pattern */
 </style>
