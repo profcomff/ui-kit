@@ -7,6 +7,7 @@ const meta = {
 	component: VuButton,
 	tags: ['autodocs'],
 	args: {
+		text: 'Привет',
 		onClick: fn(),
 	},
 } satisfies Meta<typeof VuButton>;

@@ -1,4 +1,12 @@
 <script setup lang="ts">
+// Определяем пропсы компонента
+interface Props {
+	text?: string;
+}
+
+// Объявляем пропсы
+defineProps<Props>();
+
 defineEmits<{
 	click: [];
 }>();
