@@ -13,6 +13,7 @@
     "format": "prettier src/ --write",
     "stylelint": "stylelint 'src/**/*.{vue,css}' --fix",
     "check": "vue-tsc && pnpm format && pnpm lint && pnpm stylelint",
+    "check:hard": "vue-tsc && pnpm lint && pnpm lint:deadcode && pnpm lint:circular && pnpm format && pnpm stylelint",
     "test": "echo ok",
     "sb": "storybook dev -p 6006",
     "build-storybook": "storybook build"

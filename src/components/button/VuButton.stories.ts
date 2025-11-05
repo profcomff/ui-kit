@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
+import { fn } from 'storybook/test';
 import VuButton from './VuButton.vue';
 
 const meta = {
@@ -7,6 +8,7 @@ const meta = {
 	tags: ['autodocs'],
 	args: {
 		text: 'Привет',
+		onClick: fn(),
 	},
 } satisfies Meta<typeof VuButton>;
 
