@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import { fn } from 'storybook/test';
-import { onMounted, nextTick } from 'vue';
 import VuSearch from './VuSearch.vue';
 
 const meta = {
@@ -8,14 +7,13 @@ const meta = {
 	component: VuSearch,
 	tags: ['autodocs'],
 	args: {
-		modelValue: '',
-		onClick: fn(), // как в VuButton
+		onClick: fn(),
 		'onUpdate:modelValue': fn(),
 	},
 	argTypes: {
 		modelValue: {
 			control: 'text',
-			description: 'Значение v-model',
+			description: 'Значение v-model'
 		},
 	},
 } satisfies Meta<typeof VuSearch>;
@@ -37,35 +35,21 @@ export const WithValue: Story = {
 	},
 };
 
-// Состояние наведения (Hover)
 export const Hovered: Story = {
-	args: {
-		...Default.args,
-	},
 	parameters: {
 		pseudo: {
 			hover: true,
-			selector: '.vu-search'
 		},
 	},
 };
 
-// Активное состояние (Active / Focus)
 export const Active: Story = {
-	render: args => ({
-		components: { VuSearch },
-		setup() {
-			const onClick = fn();
-
-			onMounted(async () => {
-				await nextTick();
-				const input = document.querySelector('.v-input input') as HTMLInputElement | null;
-				if (input) input.focus();
-			});
-
-			return { args, onClick };
+	args: {
+		modelValue: 'Печатаем...',
+	},
+	parameters: {
+		pseudo: {
+			active: true,
 		},
-		template: `<VuSearch v-bind="args" @click="onClick" />`,
-	}),
-	args: { modelValue: 'Печатаем...' },
+	},
 };
