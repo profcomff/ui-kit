@@ -49,7 +49,7 @@ export const Active: Story = {
 	},
 	parameters: {
 		pseudo: {
-			active: true,
+			focus: true,
 		},
 	},
 };
