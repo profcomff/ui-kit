@@ -13,7 +13,7 @@ const meta = {
 	argTypes: {
 		modelValue: {
 			control: 'text',
-			description: 'Значение v-model'
+			description: 'Значение v-model',
 		},
 	},
 } satisfies Meta<typeof VuSearch>;
@@ -21,14 +21,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Обычное состояние (Normal)
 export const Default: Story = {
 	args: {
 		modelValue: '',
 	},
 };
 
-// Состояние с текстом
 export const WithValue: Story = {
 	args: {
 		modelValue: 'Поисковый запрос',
@@ -47,9 +45,8 @@ export const Active: Story = {
 	args: {
 		modelValue: 'Печатаем...',
 	},
-	parameters: {
-		pseudo: {
-			focus: true,
-		},
+	play: ({ canvasElement }) => {
+		const field = canvasElement.querySelector('.v-field');
+		field?.classList.add('v-field--focused');
 	},
 };
