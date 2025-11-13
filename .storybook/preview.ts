@@ -1,3 +1,4 @@
+import 'vuetify/styles';
 import { vuetify } from '@/vuetify';
 import { type Preview, setup } from '@storybook/vue3-vite';
 import { withVuetifyTheme } from './withVuetifyTheme.decorator';

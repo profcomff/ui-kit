@@ -1,25 +1,23 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+defineProps({
+	modelValue: {
+		type: Boolean,
+		default: false,
+	},
+	label: String,
+	disabled: Boolean,
+});
 
-    interface Props {
-        disabled: boolean;
-        modelValue: boolean;
-        label: string;
-    }
-    const props = defineProps<Props>();
-    const emit = defineEmits(['update:modelValue'])
-
-    const value = computed({
-        get: () => props.modelValue,
-        set: (value) => emit('update:modelValue', value)
-    })
+defineEmits(['update:modelValue']);
 </script>
 
 <template>
-	<v-checkbox 
-        density="compact"
-        :label="label" 
-        v-model="value"
-        :disabled="disabled"> 
-    </v-checkbox>
+	<v-checkbox
+		density="compact"
+		:label="label"
+		:model-value="modelValue"
+		@update:model-value="$emit('update:modelValue', $event)"
+		:disabled="disabled"
+	>
+	</v-checkbox>
 </template>
