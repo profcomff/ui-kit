@@ -15,6 +15,7 @@ export default defineConfig({
 				transformAssetUrls,
 			},
 		}),
+		tailwindcss(),
 		vuetify({
 			autoImport: true,
 			styles: {
