@@ -2,8 +2,8 @@
 	"compilerOptions": {
 		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"module": "ESNext",
-		"moduleResolution": "Node",
+		"module": "esnext",
+		"moduleResolution": "bundler",
 		"strict": true,
 		"jsx": "preserve",
 		"resolveJsonModule": true,
@@ -16,7 +16,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		},
+		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
 	"references": [
