@@ -30,13 +30,16 @@ defineEmits<{
 </template>
 
 <style scoped>
+
+
+
 .vu-tag-active {
 	background-color: rgb(var(--v-theme-primary));
 	color: rgb(var(--v-theme-on-primary));
 }
 
 .vu-tag-danger {
-	background-color: rgb(var(--v-theme-error));
+	background-color: rgb(var(--v-theme-alert-1));
 	color: rgb(var(--v-theme-on-error));
 }
 </style>
