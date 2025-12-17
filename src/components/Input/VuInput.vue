@@ -2,7 +2,7 @@
 import { PropType } from 'vue';
 
 type VariantType = "outlined"
-type Rule = (value: any) => string | boolean;
+type Rule = (value: string) => string | boolean;
 
 defineProps({
   message: {
