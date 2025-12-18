@@ -22,7 +22,7 @@
     "@tailwindcss/vite": "^4.1.17",
     "pinia": "^3.0.4",
     "query-string": "^9.3.1",
-    "storybook": "^10.1.0",
+    "storybook": "^10.1.10",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.25",
     "vue-router": "^4.6.3"
