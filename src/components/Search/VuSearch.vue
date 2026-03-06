@@ -12,7 +12,6 @@ defineProps<{
 </script>
 
 <template>
-	<h1>Testing headers</h1>
 	<v-text-field
 		v-model="modelValue"
 		class="text-body-1"
