@@ -1,5 +1,5 @@
 import 'vuetify/styles';
-import { vuetify } from '@/vuetify';
+import { vuetify } from '@/vuetify.ts';
 import { type Preview, setup } from '@storybook/vue3-vite';
 import { withVuetifyTheme } from './withVuetifyTheme.decorator';
 

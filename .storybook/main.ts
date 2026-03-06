@@ -5,7 +5,6 @@ const config: StorybookConfig = {
 	addons: [
 		'@chromatic-com/storybook',
 		'@storybook/addon-docs',
-		'@storybook/addon-onboarding',
 		'@storybook/addon-a11y',
 		'@storybook/addon-vitest',
 		'storybook-addon-pseudo-states',
@@ -14,5 +13,6 @@ const config: StorybookConfig = {
 		name: '@storybook/vue3-vite',
 		options: {},
 	},
+	staticDirs: ['../src/assets/'],
 };
 export default config;

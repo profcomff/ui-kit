@@ -6,6 +6,7 @@ import svgLoader from 'vite-svg-loader';
 import vue from '@vitejs/plugin-vue';
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import { fileURLToPath } from 'url';
+import ViteFonts from 'unplugin-fonts/vite';
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
@@ -29,6 +30,17 @@ export default defineConfig({
 		}),
 		stylelint({
 			files: ['src/**/*.{vue,css}'],
+		}),
+		ViteFonts({
+			fontsource: {
+				families: [
+					{
+						name: 'Roboto',
+						weights: [100, 300, 400, 500, 700, 900],
+						styles: ['normal', 'italic'],
+					},
+				],
+			},
 		}),
 	],
 	css: {

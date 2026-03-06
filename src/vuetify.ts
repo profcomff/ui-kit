@@ -47,11 +47,14 @@ export const vuetify = createVuetify({
 	},
 	defaults: {
 		VBtnToggle: {
-			color: 'rgb(0, 1, 76)',
+			color: 'primary',
 			elevation: 1,
 		},
 		VCheckbox: {
-			color: 'rgb(0, 1, 76)',
+			color: 'primary',
+			density: 'compact',
+			ripple: false,
+			hideDetails: 'auto',
 		},
 	},
 	theme: {
