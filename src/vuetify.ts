@@ -117,6 +117,12 @@ export const vuetify = createVuetify({
 			ripple: false,
 			hideDetails: 'auto',
 		},
+		VPagination: {
+			activeColor: 'primary',
+			variant: 'elevated',
+			density: 'comfortable',
+			showFirstLastPage: true,
+		},
 		VBtnToggle: {
 			color: 'primary',
 			elevation: 1,

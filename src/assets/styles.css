@@ -8,5 +8,9 @@
 }
 
 .v-btn--icon .v-icon {
-    --v-icon-size-multiplier: calc(4/3);
+    --v-icon-size-multiplier: calc(1);
+}
+
+.v-icon--size-default {
+    font-size: calc(var(--v-icon-size-multiplier) * 1.5rem);
 }
