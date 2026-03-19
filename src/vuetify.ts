@@ -99,12 +99,17 @@ export const vuetify = createVuetify({
 			variant: 'tonal',
 		},
 		VChip: {
-			class: 'text-caption font-regular',
+			class: 'text-caption font-weight-regular',
 			variant: 'flat',
 			density: 'comfortable',
 		},
 		VChipGroup: {
-			VChip: { class: 'text-caption font-regular', variant: 'flat', density: 'comfortable', color: 'primary' },
+			VChip: {
+				class: 'text-caption font-weight-regular',
+				variant: 'flat',
+				density: 'comfortable',
+				color: 'primary',
+			},
 		},
 		VCheckbox: {
 			color: 'primary',
