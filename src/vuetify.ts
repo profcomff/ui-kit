@@ -98,15 +98,23 @@ export const vuetify = createVuetify({
 			color: 'alert-1',
 			variant: 'tonal',
 		},
-		VBtnToggle: {
-			color: 'primary',
-			elevation: 1,
+		VChip: {
+			class: 'text-caption font-regular',
+			variant: 'flat',
+			density: 'comfortable',
+		},
+		VChipGroup: {
+			VChip: { class: 'text-caption font-regular', variant: 'flat', density: 'comfortable', color: 'primary' },
 		},
 		VCheckbox: {
 			color: 'primary',
 			density: 'compact',
 			ripple: false,
 			hideDetails: 'auto',
+		},
+		VBtnToggle: {
+			color: 'primary',
+			elevation: 1,
 		},
 	},
 	theme: {
