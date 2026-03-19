@@ -1,7 +1,7 @@
 <template>
-	<div class="d-flex align-center ga-4 bg-base-white rounded-sm">
+	<div class="d-flex align-center ga-5 px-5 py-2.5 bg-base-white rounded-sm w-auto vu-toast">
 		<v-icon :icon="icon" />
-		<div class="description">
+		<div>
 			<p class="font-weight-bold">{{ props.title }}</p>
 			<p>{{ props.description }}</p>
 		</div>
@@ -12,11 +12,14 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const props = defineProps<{
+export type Toast = {
+	id: number;
 	title: string;
 	description?: string;
 	type: 'success' | 'error' | 'info';
-}>();
+};
+
+const props = defineProps<Omit<Toast, 'id'>>();
 
 const icon = computed(() => {
 	switch (props.type) {
@@ -35,4 +38,8 @@ defineEmits<{
 }>();
 </script>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.vu-toast {
+	box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+}
+</style>
