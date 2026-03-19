@@ -123,6 +123,12 @@ export const vuetify = createVuetify({
 			density: 'comfortable',
 			showFirstLastPage: true,
 		},
+		VTabs: {
+			bgColor: 'primary',
+			color: 'base-white',
+			mandatory: true,
+			grow: true,
+		},
 		VBtnToggle: {
 			color: 'primary',
 			elevation: 1,
