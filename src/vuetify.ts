@@ -1,5 +1,6 @@
 import '@mdi/font/css/materialdesignicons.css';
 import { createVuetify } from 'vuetify';
+import { VBtn } from 'vuetify/components';
 import { aliases, mdi } from 'vuetify/iconsets/mdi';
 import 'vuetify/styles';
 
@@ -55,6 +56,12 @@ const profcomffLight = {
 	},
 };
 
+const VBtnDefaults = {
+	density: 'compact',
+	rounded: 'lg',
+	class: 'text-caption font-weight-bold',
+};
+
 export const vuetify = createVuetify({
 	icons: {
 		defaultSet: 'mdi',
@@ -63,7 +70,34 @@ export const vuetify = createVuetify({
 			mdi,
 		},
 	},
+	aliases: {
+		VuButtonPrimary: VBtn,
+		VuButtonSecondary: VBtn,
+		VuButtonTertiary: VBtn,
+		VuButtonDanger: VBtn,
+	},
 	defaults: {
+		VBtn: VBtnDefaults,
+		VuButtonPrimary: {
+			...VBtnDefaults,
+			color: 'primary',
+			variant: 'flat',
+		},
+		VuButtonSecondary: {
+			...VBtnDefaults,
+			color: 'primary',
+			variant: 'tonal',
+		},
+		VuButtonTertiary: {
+			...VBtnDefaults,
+			color: 'text-base-black',
+			variant: 'flat',
+		},
+		VuButtonDanger: {
+			...VBtnDefaults,
+			color: 'alert-1',
+			variant: 'tonal',
+		},
 		VBtnToggle: {
 			color: 'primary',
 			elevation: 1,
