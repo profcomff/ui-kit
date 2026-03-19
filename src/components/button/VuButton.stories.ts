@@ -1,20 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
-import { fn } from 'storybook/test';
-import VuButton from './VuButton.vue';
+import VuButton from './VuButtonStoryWrapper.vue';
 
 const meta = {
 	title: 'Viribus Unitis/Button',
 	component: VuButton,
 	tags: ['autodocs'],
-	args: {
-		role: 'primary',
-		onClick: fn(),
-	},
-	argTypes: {
-		role: {
-			control: 'select',
-		},
-	},
 } satisfies Meta<typeof VuButton>;
 
 export default meta;
@@ -35,12 +25,20 @@ export const Default: Story = {
 export const WithIcon: Story = {
 	args: {
 		text: 'ВОЙТИ',
-		'prepend-icon': 'mdi-plus',
+		prependIcon: 'mdi-plus',
 	},
 };
 
 export const OnlyIcon: Story = {
 	args: {
-		'icon': 'mdi-plus',
+		icon: 'mdi-plus',
+	},
+};
+
+export const Disabled: Story = {
+	args: {
+		text: 'ВОЙТИ',
+		prependIcon: 'mdi-plus',
+		disabled: true,
 	},
 };
