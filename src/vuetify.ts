@@ -130,8 +130,13 @@ export const vuetify = createVuetify({
 			grow: true,
 		},
 		VBtnToggle: {
+			rounded: 'sm',
 			color: 'primary',
 			elevation: 1,
+			VBtn: {
+				rounded: 'sm',
+				class: 'font-weight-medium text-caption',
+			},
 		},
 	},
 	theme: {
