@@ -23,10 +23,6 @@ jobs:
 
       - run: pnpm install
 
-      - run: |
-          VERSION=${{ github.ref_name }}
-          pnpm setVersion -v ${VERSION:1}
-
       - run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
