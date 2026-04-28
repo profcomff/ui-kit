@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/vue3-vite';
-import VuCheckbox from './VuCheckbox.vue';
+import { VCheckbox } from 'vuetify/components';
 
 const meta = {
-	title: 'Viribus Unitis/VuCheckbox',
-	component: VuCheckbox,
-} satisfies Meta<typeof VuCheckbox>;
+	title: 'Viribus Unitis/Checkbox',
+	component: VCheckbox,
+} satisfies Meta<typeof VCheckbox>;
 
 export default meta;
 

@@ -1,7 +1,8 @@
 import 'vuetify/styles';
-import { vuetify } from '@/vuetify';
+import { vuetify } from '../src/vuetify.ts';
 import { type Preview, setup } from '@storybook/vue3-vite';
 import { withVuetifyTheme } from './withVuetifyTheme.decorator';
+import '../src/assets/styles.css'
 
 setup(app => app.use(vuetify));
 
